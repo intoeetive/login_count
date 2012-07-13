@@ -38,7 +38,7 @@ class Login_count_upd {
         $data = array( 'module_name' => 'Login_count' , 'module_version' => $this->version, 'has_cp_backend' => 'n'); 
         $this->EE->db->insert('modules', $data); 
         
-        $this->EE->db->query("ALTER TABLE `exp_members` ADD `login_count` INT NOT NULL DEFAULT 0");
+        $this->EE->db->query("ALTER TABLE `exp_members` ADD  `login_count` INT NOT NULL DEFAULT 0");
         
         return TRUE; 
         
@@ -57,6 +57,8 @@ class Login_count_upd {
         
         $this->EE->db->where('class', 'Login_count'); 
         $this->EE->db->delete('actions'); 
+        
+        $this->EE->db->query("ALTER TABLE `exp_members` DROP `login_count`");
         
         return TRUE; 
     } 

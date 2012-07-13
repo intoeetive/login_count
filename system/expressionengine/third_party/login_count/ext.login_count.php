@@ -33,7 +33,7 @@ class Login_count_ext
 	var $docs_url		= 'https://github.com/intoeetive/login_count/README';
     
     var $settings 		= array();
-    var $required_by 	= array('module');	
+    //var $required_by 	= array('module');	
     
    	/**
 	 * Constructor
